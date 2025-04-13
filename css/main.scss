@@ -1,0 +1,164 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+// $base-font-family: Helvetica, Arial, sans-serif;
+// $base-font-size:   16px;
+// $small-font-size:  $base-font-size * 0.875;
+// $base-line-height: 1.5;
+//
+// $spacing-unit:     30px;
+//
+// $text-color:       #111;
+// $background-color: #fdfdfd;
+// $brand-color:      #2a7ae2;
+//
+// $grey-color:       #828282;
+// $grey-color-light: lighten($grey-color, 40%);
+// $grey-color-dark:  darken($grey-color, 25%);
+//
+// // Width of the content area
+// $content-width:    800px;
+//
+// $on-palm:          600px;
+// $on-laptop:        800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+// @mixin media-query($device) {
+//     @media screen and (max-width: $device) {
+//         @content;
+//     }
+// }
+
+
+@import url("//fonts.googleapis.com/css?family=Oswald:400,700,300");
+// Import partials from `sass_dir` (defaults to `_sass`)
+// @import
+//   "theme"
+        // "base",
+        // "layout",
+        // "syntax-highlighting"
+// ;
+
+html,body {
+  overflow-x: hidden;
+}
+
+body {
+  margin-bottom: 200px;
+}
+
+.navbar-top {
+  min-height: 0;
+  margin-bottom: 0;
+  z-index: 1100;
+  .navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .navbar-right {
+    margin-right: 0;
+  }
+}
+
+.navbar-main {
+  border: 0;
+  background: #DDD;
+  .navbar-brand {
+    font-weight: bold;
+  }
+}
+
+.owl-carousel {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px #DDD solid;
+  padding: 4px;
+  .item {
+    border-radius: 4px;
+    overflow: hidden;
+    background: url("/img/loader.gif") 50% 50% no-repeat #E7E7E7;
+  }
+  .item-text {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: rgba(#FFF, .6);
+    padding: 0 50px 15px;
+    width: 100%;
+    > * {
+      display: inline-block;
+      float: left;
+      clear: left;
+      color: #222;
+    }
+  }
+  h2 {
+    font: 700 5em/1 'Oswald', sans-serif;
+  }
+  h3 {
+    font: 400 2em/1 'Oswald', sans-serif;
+  }
+}
+
+div.owl-theme .owl-controls .owl-page span {
+  background: #DDD;
+}
+
+.carousel-caption {
+  font-size: 2em;
+  background: rgba(black, .2);
+  padding: 10px;
+  bottom: 40px;
+}
+
+.carousel-indicators {
+  bottom: 0;
+  li {
+    border-radius: 1px;
+  }
+}
+
+.section-head {
+  font: 300 2em/1 'Oswald', sans-serif;
+  margin-bottom: 20px;
+  border-bottom: 1px #DDD solid;
+  padding-bottom: 5px;
+  color: #DDD;
+}
+
+.label-onsale {
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  line-height: 1;
+  padding: 3px 8px;
+  transform: rotate(-45deg);
+}
+
+.grid-img-outer {
+   min-height: 100px;
+   background: url("/img/loader.gif") 50% 50% no-repeat #E7E7E7;
+   border-radius: 4px;
+   display: block;
+   overflow: hidden;
+   > img {
+     width: 100%;
+   }
+}
+
+.search-bar > form {
+  margin-bottom: 20px;
+}

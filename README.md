@@ -1,1 +1,1 @@
-# jekyll-ecommerce-template-gh-pages
+# jekyll ecommerce template

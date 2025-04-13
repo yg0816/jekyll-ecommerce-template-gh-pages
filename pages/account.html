@@ -1,0 +1,19 @@
+---
+layout: page
+title: "My Account"
+permalink: "/account/index.html"
+---
+
+{% assign customer = site.data.customer %}
+
+<div class="row">
+
+  <div class="col-md-9">
+    {% include order-history.html %}
+  </div>
+
+  <div class="col-md-3">
+    {% include account-details.html %}
+  </div>
+
+</div>

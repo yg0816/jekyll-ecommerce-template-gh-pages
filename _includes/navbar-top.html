@@ -1,0 +1,43 @@
+
+
+<nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a>
+          <span class="glyphicon glyphicon-earphone"></span>
+          {{ site.shop.phone }}
+        </a>
+      </li>
+      <li>
+        <a>
+          <span class="glyphicon glyphicon-envelope"></span>
+          {{ site.shop.email }}
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown text-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          My Account
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/account">My Account</a>
+          </li>
+          <li>
+            <a href="/account/login/index.html">Login</a>
+          </li>
+          <li>
+            <a href="/account/register">Create account</a>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

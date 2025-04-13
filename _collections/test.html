@@ -1,0 +1,12 @@
+---
+layout: collection
+title: "Collection 1"
+id: "test"
+thumbnail: "pandora-miami-fashion-week-2014.jpg"
+---
+
+{% for product in site.products %}
+  {% if product.collection_name == page.id %}
+    {% include product-grid-item.html product=product %}
+  {% endif %}
+{% endfor %}

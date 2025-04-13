@@ -1,0 +1,40 @@
+{% assign cart = site.data.cart %}
+<div id="cart" class="cart {% unless page.url contains '/cart/' %} collapse {% endunless %}">
+
+  <div class="page-header">
+    <h1>Shopping Cart <a href="/cart" class="btn btn-default pull-right">Proceed to checkout</a></h1>
+  </div>
+
+  {% if cart.items.size > 0 %}
+    <div class="list-group">
+      {% for item in cart.items %}
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col-xs-3">
+              <a href="{{ item.url }}">
+                <img src="{{ item.img-small }}" alt="{{ item.title }}" class="img-responsive img-thumbnail">
+              </a>
+            </div>
+            <div class="col-xs-6 text-center">
+              <h4>
+                <a href="{{ item.url }}"> {{ item.product.title }} </a> <br>
+                {% unless item.variant.title contains 'Default' %}
+                  <small>{{ item.variant.title }}</small>
+                {% endunless %}
+              </h4>
+            </div>
+            <div class="col-xs-3 text-right">
+              <h3>{{ item.price | money }}</h3>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% comment %}
+      The cart is empty
+    {% endcomment %}
+  {% else %}
+    <p>Your cart is currently empty.</p>
+    <p>Continue browsing <a href="/collections/all">here</a>.</p>
+  {% endif %}
+</div>

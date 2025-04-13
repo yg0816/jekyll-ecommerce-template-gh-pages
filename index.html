@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% include owl.html %}
+
+<br>
+
+<h3 class="section-head">Featured Products</h3>
+<div class="row">
+  {% for product in site.products | limit: 8 %}
+    {% include product-grid-item.html product=product %}
+  {% endfor %}
+</div>
+
+<h3 class="section-head">Featured Collections</h3>
+<div class="row">
+  {% for i in (15..18) %}
+    <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="thumbnail">
+        <a href="/collections/test" class="grid-img-outer">
+          <!-- <img src="http://lorempixel.com/g/253/253/technics?random={{ i }}" alt="Collection Title"> -->
+          <img src="/img/products/sm/{{ i }}.jpg" alt="Collection Title">
+        </a>
+        <div class="caption text-center">
+          <h5>
+            <a href="/collections/test">Collection {{i}} Title</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="home_page_content hidden">
+  <h3>About Us</h3>
+  <p>A great About Us page helps builds trust between you and your customers. The more content you provide about you and your business, the more confident people will be when purchasing from your store.</p>
+  <p>Your About Us page might include:</p>
+  <ul>
+    <li>Who you are</li>
+    <li>Why you sell the items you sell</li>
+    <li>Where you are located</li>
+    <li>How long you have been in business</li>
+    <li>How long you have been running your online shop</li>
+    <li>Who are the people on your team</li>
+    <li>Contact information</li>
+    <li>Social links (Twitter, Facebook)</li>
+  </ul>
+  <p>To edit the content on this page, go to the <a href="/admin/pages">Pages</a> section of your Shopify admin.</p>
+  <p></p>
+</div>

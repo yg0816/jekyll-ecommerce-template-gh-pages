@@ -1,0 +1,34 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    {% include head.html %}
+    {{ content_for_header }}
+  </head>
+
+  <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+
+    <div id="PageContainer">
+
+      {% include navbar-top.html %}
+      {% include navbar-main.html %}
+
+      <main role="main">
+        <div class="container">
+          {% include search-bar.html %}
+          {% unless page.url contains '/cart/' %}
+            {% include cart.html %}
+          {% endunless %}
+          {{ content }}
+        </div>
+      </main>
+
+      <!-- {% include site-footer.html %} -->
+
+    </div>
+
+  </body>
+</html>

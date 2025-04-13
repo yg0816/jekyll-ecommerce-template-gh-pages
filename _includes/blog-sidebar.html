@@ -1,0 +1,35 @@
+{% assign blog = site.data.blog %}
+
+{% comment %}
+  Recent blog posts
+{% endcomment %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Recent Articles</h4>
+  </div>
+  <ul class="list-group">
+    {% for article in site.posts limit:6 %}
+      <a class="list-group-item" href="{{ article.url }}">{{ article.title }}</a>
+    {% endfor %}
+  </ul>
+</div>
+
+{% comment %}
+  Blog tags
+{% endcomment %}
+{% if blog.all_tags.size > 0 %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Tags</h4>
+    </div>
+    <ul class="list-group">
+      {% for tag in blog.all_tags %}
+        {% if current_tags contains tag %}
+          <a class="list-group-item active" href="#">{{ tag }}</a></li>
+        {% else %}
+          <a class="list-group-item" href="#">{{ tag }}</a>
+        {%endif%}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
